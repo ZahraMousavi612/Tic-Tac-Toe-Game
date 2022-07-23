@@ -8,36 +8,35 @@
     <script src="https://kit.fontawesome.com/bbad43c7ab.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div>
-        <!-- <Select-box> -->
+    <audio id="audio" loop autoplay>
+        <source src="assets/media/game.mp3" type="audio/mpeg">
+    </audio>
+    <div class="main">
         <div class="select_box">
-            <header>
+            <header class="center">
                 <h1>Tic Tac Toe </h1>
-            <div class="icon"><i class="fa-solid fa-volume-high"></i></div>
-            <div class="icon"><i class="fa-solid fa-volume-xmark"></i></div>
-            <div class="icon"><i class="fa-solid fa-sun"></i></div>
-            <div class="icon"><i class="fa-solid fa-moon"></i></div>
+                <div class="icon"><i class="fa-solid fa-volume-high"></i></div>
+                <!-- <div class="icon"><i class="fa-solid fa-volume-xmark"></i></div> -->
+                <div class="icon"><i class="fa-solid fa-sun"></i></div>
+                <!-- <div class="icon"><i class="fa-solid fa-moon"></i></div> -->
             </header>
+            
             <div class="content">
-                <div class="title">Select Which You Want To be!</div>
+                <div class="title center">Select Which You Want To be!</div>
                 <div class="options">
                     <button class="playerX">Player (X)</button>
                     <button class="playerO">Player (O)</button>
                 </div>
             </div>
         </div>
-        <!-- playboard section -->
         <div class="play_board">
             <div class="details">
                 <div class="players">
-                    <span class="Xturn active">X's Turn</span>
-                    <span class="Oturn">O's Turn</span>
-                    <div class="slider"></div>
                 </div>
             </div>
             <div class="play_area">
                 <section>
-                    <span class="box1"> </span>
+                    <span class="box1"></span>
                     <span class="box2"></span>
                     <span class="box3"></span>
                 </section>
@@ -53,7 +52,7 @@
                 </section>
             </div>
         </div>
-        <!-- Result Box -->
+        <hr>
         <div class="result_box">
             <div class="won_text"></div>
             <div class="btn">
@@ -61,6 +60,6 @@
             </div>
         </div>
     </div>
-
+    
 </body>
 </html>
