@@ -125,3 +125,35 @@ body{
     transition: all 0.3s ease;
 }
 /* result section */
+.result_box.show{
+    opacity: 1;
+    pointer-events: auto;
+}
+.result_box .won_text{
+    font-size: 25px;
+    font-weight: 500;
+    display:flex;
+    justify-content: center;
+}
+.result_box  .won_text p{
+    font-weight: 700;
+    margin: 0 5px;
+    display: flex;
+}
+.result_box .btn{
+    display: flex;
+    justify-content: center;
+}
+.result_box .btn button{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border: none;
+    outline: none;
+    background: #8b008b;
+    border-radius: 5px;
+    cursor : pointer;
+    color: white;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
