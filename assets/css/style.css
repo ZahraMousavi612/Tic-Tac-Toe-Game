@@ -11,7 +11,10 @@ body{
     width: 100%;
     max-width: 450px;
     background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 9px #222,-2px -2px 5px #000;
 }
+/* header and select box */
 .select_box{
     width: 100%;
     padding-bottom: 15px;
@@ -73,4 +76,52 @@ body{
     transition: all 0.3s ease;
     margin-right: 10%;
 }
-
+/* game section */
+.options button:hover,
+.result_box .btn button:hover, .icon:hover{
+    transform: scale(0.96);
+    opacity: 0.8;
+}
+.play_board section{
+    display: flex;
+    width: 70%;
+    margin:0 auto;
+}
+.play_board .play_area{
+    background-color: #8b008b;
+    width: 100%;  
+    border: 3px solid #fff;
+}
+.play_board section span{
+    display: block;
+    margin: 3px;
+    height: 100px;
+    width: 100px;
+    background: #fff ;
+    border-radius: 5px;
+    font-size: 40px;
+    text-align: center;
+    line-height: 80px;
+    color:#8b008b;
+    user-select: none;
+}
+.play_board .details .players{
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;  
+}
+.play_board .details span{
+    width: 100%;
+    border-radius: 5px;
+    padding: 7px 0;
+    font-size: 19px;
+    color:#8b008b;
+    font-weight: 500;
+    cursor: default;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+/* result section */
