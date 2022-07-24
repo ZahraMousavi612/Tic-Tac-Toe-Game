@@ -10,7 +10,7 @@ const selectBox = document.querySelector(".select_box"),
  replayBtn = resultBox.querySelector("button");
 var voice = document.getElementById('audio');
  audioIcon = document.getElementById('audio-icon');
- lightIcon = document.getElementById('light-icon');
+ styleIcon = document.getElementById('style-icon');
 
  window.onload = () =>{//Once Window Loaded
     for (let i = 0; i < allBox.length; i++) {  //add on click attribute in all available section's span
@@ -20,7 +20,60 @@ var voice = document.getElementById('audio');
         players.setAttribute("class","players  player"); //adding three class name in player element
     }
 }
+{/* <i class="fa-solid fa-moon"></i> */}
+// audio
+function playpause() {
+	if (voice.paused) {
+	 voice.play();
+	 audioIcon.innerHTML=` <i class="fa-solid fa-volume-high"></i>`;
+	 
+	}
+	else {
+	 voice.pause();
+	 audioIcon.innerHTML=`<i class="fa-solid fa-volume-xmark"></i>`;
 
+	}
+  }
+
+
+//   change dark and light model
+function chngStyle(){
+	var chngBgColor = document.getElementsByClassName('chngBg');
+
+	if(styleIcon.innerHTML === <i class="fa-solid fa-sun"></i>){
+		styleIcon.style.backgroundColor="red";
+	// 	styleIcon.innerHTML=`<i class="fa-solid fa-moon"></i> `;
+    //    for (let index = 0; index < chngBgColor.length; index++) {
+	// 	const element = chngBgColor[index];
+	// 	element.style.backgroundColor = "#111";
+	//    }
+	}
+	else{
+		styleIcon.style.backgroundColor="blue";
+	// 	styleIcon.innerHTML=` <i class="fa-solid fa-sun"></i> `;
+	// 	for (let index = 0; index < chngBgColor.length; index++) {
+	// 		const element = chngBgColor[index];
+	// 		element.style.backgroundColor = "#8b008b";
+	//    }
+    }
+	
+}
+// Swaps the stylesheet to achieve dark mode.
+// function changeTheme() {
+// 	const theme = document.getElementById("theme");
+// 	setTimeout(() => {
+// 	  toast.innerHTML = "Calculator";
+// 	}, 1500);
+// 	if (theme.getAttribute("href") === lightTheme) {
+// 	  theme.setAttribute("href", darkTheme);
+// 	  themeIcon.setAttribute("src", sunIcon);
+// 	  toast.innerHTML = "Dark Mode 🌙";
+// 	} else {
+// 	  theme.setAttribute("href", lightTheme);
+// 	  themeIcon.setAttribute("src", moonIcon);
+// 	  toast.innerHTML = "Light Mode ☀️";
+// 	}
+//   }
 
 let playerXIcon = "X" ;  //X Sign
 let playerOIcon = "O" ;  //O Sign

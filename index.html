@@ -7,25 +7,26 @@
      <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://kit.fontawesome.com/bbad43c7ab.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="chngBg">
     <audio id="audio" loop autoplay>
-        <source src="assets/media/game2.mp3" type="audio/mpeg">
+        <source src="assets/media/game.mp3" type="audio/mpeg">
     </audio>
     <div class="main">
         <div class="select_box">
             <header class="center">
                 <h1>Tic Tac Toe </h1>
-                <div class="icon" style="margin-left: 150px;" id="audio-icon" onclick="playpause()"><i class="fa-solid fa-volume-high"></i></div>
-                <!-- <div class="icon"><i class="fa-solid fa-volume-xmark"></i></div> -->
-                <div class="icon" id="light-icon"><i class="fa-solid fa-sun" ></i></div>
-                <!-- <div class="icon"><i class="fa-solid fa-moon"></i></div> -->
+                <div class="icon chngBg" style="margin-left:150px;" id="audio-icon" onclick="playpause()" > 
+                    <i class="fa-solid fa-volume-high"></i>
+                </div>
+                <div class="icon chngBg" id="style-icon" onclick="chngStyle()">
+                    <i class="fa-solid fa-sun" ></i>
+                </div>
             </header>
-            
             <div class="content">
                 <div class="title center">Select Which You Want To be!</div>
                 <div class="options">
-                    <button class="playerX">Player (X)</button>
-                    <button class="playerO">Player (O)</button>
+                    <button class="playerX chngBg">Player (X)</button>
+                    <button class="playerO chngBg">Player (O)</button>
                 </div>
             </div>
         </div>
@@ -34,7 +35,7 @@
                 <div class="players">
                 </div>
             </div>
-            <div class="play_area">
+            <div class="play_area chngBg">
                 <section>
                     <span class="box1"></span>
                     <span class="box2"></span>
@@ -56,7 +57,7 @@
         <div class="result_box">
             <div class="won_text"></div>
             <div class="btn">
-                <button>Replay</button>
+                <button class="chngBg">Replay</button>
             </div>
         </div>
     </div>
