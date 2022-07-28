@@ -8,7 +8,7 @@ const selectBox = document.querySelector(".select_box"),
  resultBox = document.querySelector(".result_box"),
  wonText = resultBox.querySelector(".won_text");
  replayBtn = resultBox.querySelector("button");
-var voice = document.getElementById('audio');
+ voice = document.getElementById('audio');
  audioIcon = document.getElementById('audio-icon');
  styleIcon = document.getElementById('style-icon');
 
@@ -22,7 +22,7 @@ var voice = document.getElementById('audio');
 }
 {/* <i class="fa-solid fa-moon"></i> */}
 // audio
-function playpause() {
+function playpause(){
 	if (voice.paused) {
 	 voice.play();
 	 audioIcon.innerHTML=` <i class="fa-solid fa-volume-high"></i>`;
@@ -33,47 +33,9 @@ function playpause() {
 	 audioIcon.innerHTML=`<i class="fa-solid fa-volume-xmark"></i>`;
 
 	}
-  }
-
-
-//   change dark and light model
-function chngStyle(){
-	var chngBgColor = document.getElementsByClassName('chngBg');
-
-	if(styleIcon.innerHTML === <i class="fa-solid fa-sun"></i>){
-		styleIcon.style.backgroundColor="red";
-	// 	styleIcon.innerHTML=`<i class="fa-solid fa-moon"></i> `;
-    //    for (let index = 0; index < chngBgColor.length; index++) {
-	// 	const element = chngBgColor[index];
-	// 	element.style.backgroundColor = "#111";
-	//    }
-	}
-	else{
-		styleIcon.style.backgroundColor="blue";
-	// 	styleIcon.innerHTML=` <i class="fa-solid fa-sun"></i> `;
-	// 	for (let index = 0; index < chngBgColor.length; index++) {
-	// 		const element = chngBgColor[index];
-	// 		element.style.backgroundColor = "#8b008b";
-	//    }
-    }
-	
 }
-// Swaps the stylesheet to achieve dark mode.
-// function changeTheme() {
-// 	const theme = document.getElementById("theme");
-// 	setTimeout(() => {
-// 	  toast.innerHTML = "Calculator";
-// 	}, 1500);
-// 	if (theme.getAttribute("href") === lightTheme) {
-// 	  theme.setAttribute("href", darkTheme);
-// 	  themeIcon.setAttribute("src", sunIcon);
-// 	  toast.innerHTML = "Dark Mode 🌙";
-// 	} else {
-// 	  theme.setAttribute("href", lightTheme);
-// 	  themeIcon.setAttribute("src", moonIcon);
-// 	  toast.innerHTML = "Light Mode ☀️";
-// 	}
-//   }
+
+
 
 let playerXIcon = "X" ;  //X Sign
 let playerOIcon = "O" ;  //O Sign
