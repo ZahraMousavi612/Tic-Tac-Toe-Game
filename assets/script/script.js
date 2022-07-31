@@ -8,103 +8,126 @@ const selectBox = document.querySelector(".select_box"),
  resultBox = document.querySelector(".result_box"),
  wonText = resultBox.querySelector(".won_text");
  replayBtn = resultBox.querySelector("button");
- voice = document.getElementById('audio');
- audioIcon = document.getElementById('audio-icon');
- styleIcon = document.getElementById('style-icon');
+var voice = document.getElementById('audio');
 
- window.onload = () =>{//Once Window Loaded
-    for (let i = 0; i < allBox.length; i++) {  //add on click attribute in all available section's span
+//Once Window Loaded
+window.onload = () =>{
+    for (let i = 0; i < allBox.length; i++) { 
         allBox[i].setAttribute("onclick","clickedBox(this)");
     }
 	selectOBtn.onclick = () =>{
-        players.setAttribute("class","players  player"); //adding three class name in player element
+        players.setAttribute("class","players  player"); 
     }
 }
-{/* <i class="fa-solid fa-moon"></i> */}
-// audio
-function playpause(){
-	if (voice.paused) {
-	 voice.play();
-	 audioIcon.innerHTML=` <i class="fa-solid fa-volume-high"></i>`;
-	 
-	}
-	else {
-	 voice.pause();
-	 audioIcon.innerHTML=`<i class="fa-solid fa-volume-xmark"></i>`;
 
+// light and dark
+let state = true; 
+function changeStyle(){
+	var Box = document.getElementsByClassName('box');
+	var chngBg = document.getElementsByClassName('chngBg');
+	var stateIcon = document.getElementById('stateIcon');
+	stateIcon.innerHTML=`<i class="fa-solid fa-moon"></i>`;
+
+	if(state){	
+		for (let index = 0; index < Box.length; index++) { 
+			const element = Box[index];
+			element.style.color = "#000";
+		}
+		for (let index = 0; index < chngBg.length; index++) {
+			const element = chngBg[index];
+			element.style.backgroundColor="#000";
+			element.style.transition = "2s";
+		}
+		state = false;
+	}else{
+		stateIcon.innerHTML=`<i class="fa-solid fa-sun"></i>`;
+
+		for (let index = 0; index < Box.length; index++) { 
+			const element = Box[index];
+			element.style.color = "#8b008b";
+		}
+		for (let index = 0; index < chngBg.length; index++) { 
+			const element = chngBg[index];
+			element.style.backgroundColor="#8b008b";
+			element.style.transition = "2s";
+		}
+		state = true;
 	}
 }
 
+// audio
+function playpause() {
+	if (voice.paused) {
+	  voice.play(); 
+	  document.getElementById('audio-icon').innerHTML=`<i class="fa-solid fa-volume-high"></i>`;
+	}
+	else {
+	  voice.pause();
+	  document.getElementById('audio-icon').innerHTML=`<i class="fa-solid fa-volume-xmark"></i>`;
+	}
+}
 
-
-let playerXIcon = "X" ;  //X Sign
-let playerOIcon = "O" ;  //O Sign
+//Game Section
+let playerXIcon = "X" ; 
+let playerOIcon = "O" ; 
 let playerSign ="X"; //Suppose player will be X
 let runBot = true;
 
-
 // USER Clicked Function
 function clickedBox(element){
-    // console.log(element);
     if(players.classList.contains("player")){
-        element.innerHTML = `<b>${playerOIcon}</b>`; //adding circle sign when click
+        element.innerHTML = `<b>${playerOIcon}</b>`; 
 		players.innerHTML=`<b>${playerSign}'s Turn</b>`;
-		//If player choose O then we will change the sign
-        playerSign ="O"; 
-    	
+    	playerSign ="O"; 
 		element.setAttribute("id" , playerSign);    	
     }else{
-        element.innerHTML = `<b>${playerXIcon}</b>`; //adding cross sign when click
+        element.innerHTML = `<b>${playerXIcon}</b>`; 
 		players.innerHTML=`<b>${playerSign}'s Turn</b>`;   
 		element.setAttribute("id" , playerSign);
     }
-    selectWinner(); // Calling the winner
+	// Calling the winner
+    selectWinner(); 
     playBoard.style.pointerEvents ="none";
-    element.style.pointerEvents ="none";  //once the user selected any box that box can't be selected any more
-    let randomDelayTime = ((Math.random() * 1000) + 200).toFixed();  //Generating Random Time Delay for bot
-    // console.log(randomDelayTime);
+    element.style.pointerEvents ="none";  
+    let randomDelayTime = ((Math.random() * 1000) + 200).toFixed(); 
     setTimeout(()=>{
-    	bot(runBot); //calling bot function
-    }, randomDelayTime); //passing random delay time 
+    	bot(runBot); 
+    }, randomDelayTime);
 }
 
 // BOT Clicked Function
 function bot(runBot){
-	if (runBot){ //if runBot is true then run the following
-
-	// first change the player sign... so if player use X value in id then bot will have the O Value
+	if (runBot){ 
 	playerSign="O";
 	let array = [];
 	for (let i = 0; i < allBox.length; i++) {
 		if (allBox[i].childElementCount ==0) {
 			array.push(i);
-			// console.log(i + " " + "has no child");
 		}
 	}
-	let randomBox = array[Math.floor(Math.random()*array.length)]; //Getting Random index from array so bot will select random no.
+	let randomBox = array[Math.floor(Math.random()*array.length)]; 
 	if (array.length > 0){
         if(players.classList.contains("player")){
-            allBox[randomBox].innerHTML = `<b>${playerXIcon}</b>`; //adding circle sign when click
+            allBox[randomBox].innerHTML = `<b>${playerXIcon}</b>`; 
 	    	players.innerHTML=`<b>${playerSign}'s Turn</b>`;  
-	    	// if user is O then id will be X
 	    	playerSign = "X";
 			allBox[randomBox].setAttribute("id",playerSign);
         }else{
-            allBox[randomBox].innerHTML = `<b> ${playerOIcon}</b>`; //adding cross sign when click
+            allBox[randomBox].innerHTML = `<b> ${playerOIcon}</b>`;
 		    players.innerHTML=`<b>${playerSign}'s Turn</b>`;      
 	    	allBox[randomBox].setAttribute("id",playerSign);
         }
         selectWinner();
 	}
-	allBox[randomBox].style.pointerEvents="none"; //Once bot select any box you can't select that again
+	allBox[randomBox].style.pointerEvents="none"; 
 	playBoard.style.pointerEvents ="auto";
-   	playerSign = "X"; //passing the x value
+   	playerSign = "X"; 
 	}
 }
 
 //Choosing the Winner
 function getclass(idName){
-	return document.querySelector(".box" + idName).id; //Returning the id name
+	return document.querySelector(".box" + idName).id; 
 }
 
 function checkClass(val1 , val2, val3 , sign){
@@ -112,27 +135,24 @@ function checkClass(val1 , val2, val3 , sign){
 		return true;
 	}
 }
-function selectWinner(){  //If One Combination Of Them IS Select Then choose the winner
+function selectWinner(){  
 	if(checkClass(1,2,3,playerSign) || checkClass(4,5,6,playerSign) || checkClass(7,8,9,playerSign) || checkClass(1,4,7,playerSign) || checkClass(2,5,8,playerSign) || checkClass(3,6,9,playerSign) || checkClass(1,5,9,playerSign) || checkClass(3,5,7,playerSign)){
 		console.log(playerSign + " " + "is the Winner!")
-		//once match won by someone then stop the bot
 		runBot = false;
 		bot(runBot);
-		setTimeout(() =>{ //We'll delay the result box a little bit
+		setTimeout(() =>{ 
 			resultBox.classList.add("show");
-		}, 700); //700ms delay
+		}, 700); 
 
 		wonText.innerHTML = `Player <p> ${playerSign} </p> Won`;
-		//lets show the result box		
+	
 	}else{
-		// if Match Draws
-		// first we'll check all id... if all span has id and no one won the game then we will draw the game
 		if(getclass(1) != ""&& getclass(2) != ""&& getclass(3) != ""&& getclass(4) != ""&& getclass(5) != ""&& getclass(6) != ""&& getclass(7) != ""&& getclass(8) != ""&& getclass(9) != ""){
 			runBot = false;
      		bot(runBot);
-	    	setTimeout(() =>{ //We'll delay the result box a little bit
+	    	setTimeout(() =>{ 
 				resultBox.classList.add("show");
-			}, 700); //700ms delay
+			}, 700);
 	  		wonText.textContent = `Match has been Drawn!`;
 
 		}
@@ -140,6 +160,5 @@ function selectWinner(){  //If One Combination Of Them IS Select Then choose the
 }
 
 replayBtn.onclick = ()=>{
-	window.location.reload(); //reload the page
+	window.location.reload(); 
 };
-

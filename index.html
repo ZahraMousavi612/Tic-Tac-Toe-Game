@@ -4,24 +4,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
-     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://kit.fontawesome.com/bbad43c7ab.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="assets/media/TicTacToe.gif">
+
 </head>
 <body class="chngBg">
+    <!-- audio -->
     <audio id="audio" loop autoplay>
         <source src="assets/media/game.mp3" type="audio/mpeg">
     </audio>
+    <!-- game  -->
     <div class="main">
         <div class="select_box">
+            <!-- header -->
             <header class="center">
                 <h1>Tic Tac Toe </h1>
                 <div class="icon chngBg" style="margin-left:150px;" id="audio-icon" onclick="playpause()" > 
                     <i class="fa-solid fa-volume-high"></i>
                 </div>
-                <div class="icon chngBg" id="style-icon" onclick="chngStyle()">
-                    <i class="fa-solid fa-sun" ></i>
+                <div class="icon chngBg" id="stateIcon" onclick="changeStyle()">
+                    <i class="fa-solid fa-sun"></i>
                 </div>
             </header>
+            <!-- player otions -->
             <div class="content">
                 <div class="title center">Select Which You Want To be!</div>
                 <div class="options">
@@ -32,28 +38,31 @@
         </div>
         <div class="play_board">
             <div class="details">
+                <!-- player turn area -->
                 <div class="players">
                 </div>
             </div>
+            <!-- game area -->
             <div class="play_area chngBg">
                 <section>
-                    <span class="box1"></span>
-                    <span class="box2"></span>
-                    <span class="box3"></span>
+                    <span class="box1 box"></span>
+                    <span class="box2 box"></span>
+                    <span class="box3 box"></span>
                 </section>
                 <section>
-                    <span class="box4"></span>
-                    <span class="box5"></span>
-                    <span class="box6"></span>
+                    <span class="box4 box"></span>
+                    <span class="box5 box"></span>
+                    <span class="box6 box"></span>
                 </section>
                 <section>
-                    <span class="box7"></span>
-                    <span class="box8"></span>
-                    <span class="box9"></span>
+                    <span class="box7 box"></span>
+                    <span class="box8 box"></span>
+                    <span class="box9 box"></span>
                 </section>
             </div>
         </div>
         <hr>
+        <!-- result section -->
         <div class="result_box">
             <div class="won_text"></div>
             <div class="btn">
@@ -64,3 +73,5 @@
     <script src="assets/script/script.js"></script>
 </body>
 </html>
+
+
