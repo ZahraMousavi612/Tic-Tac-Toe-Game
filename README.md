@@ -53,3 +53,80 @@ Tic Tac Toe  is a site that hopes to demonstrate how pure JavaScript works in a 
 
   ![Logo](media/footer.PNG)
 
+  
+
+
+### Testing
+- I tested that this page works in different browsers: Chrome, Firfox, Safari.
+ 
+- I confirmed that this project is responsive, looks good and functions on all standard screen sizes using the devtools device toolbar.
+ 
+- I confirmed that the  all of game section are readable and easy to play.
+
+## Validator Testing 
+
+- HTML
+  - No errors were returned when passing through the official W3C validator.
+- CSS
+  - No errors were found when passing through the official W3C validator.
+- Accessibility
+     - I confirmed that the colors and fonts chosen are easy to read and accessible by running it through lighthouse in devtools.
+
+     ![Accessibility](media/lightHouse.PNG)
+
+      
+
+
+## Technologies Used 
+
+I have used several technologies that have enabled this design to work:
+
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+    - Used as the basic building block for the project and to structure the content.
+- [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
+    - Used to style all the web content across the project. 
+- [JavaScript](https://www.javascript.com/)
+    - Used for the responsive navbar, scroll down arrow and image gallery.
+- [Google Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
+    - Used as a primary method of fixing spacing issues, finding bugs, and testing responsiveness across the project.
+- [GitHub](https://github.com/)
+    - Used to store code for the project after being pushed.
+- [Gitpod](https://www.gitpod.io/)
+    - Used as the development environment.
+- [Grammarly](https://www.grammarly.com/)
+    - Used to fix the thousands of grammar errors across the project.
+- [Coloors](https://coolors.co/)
+    - Used to create a colour palette for the design.
+- [W3C Markup Validation Service](https://validator.w3.org/) 
+    - Used to validate all HTML code written and used in this webpage.
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input)
+    - Used to validate all CSS code written and used in this webpage.
+- [AmIResponsive](http://ami.responsivedesign.is/)
+    - Used to generate repsonsive image used in README file.
+
+## Deployment
+
+I deployed this website by using GitPages and following the below steps:
+
+*GitHub pages deployment* 
+
+1. Log in to GitHub
+2. In your Repository section, select the project repository that you want to deploy
+3. In the menu located at the top of this section, click 'Settings'
+4. Select 'Pages' on the left-hand menu - this is around halfway down
+5. In the source section, select branch 'Master' and save
+6. The page is then given a site URL which The live link can be found here:      
+     -https://zahramousavi612.github.io/Tic-Tac-Toe-Game/
+
+
+## Credits  
+
+### Content 
+
+- The game main function that used in game area,I saw that from youtube  video. 
+
+
+### Media
+
+- The audio used on the game is from an application that I downloaded and then I change the format of that to .mp3 to be accessible to all browser
+
