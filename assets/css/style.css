@@ -89,7 +89,7 @@ body{
     transform: scale(0.96);
     opacity: 0.8;
 }
-.play_board section{
+.play_board .section{
     display: flex;
     width: 70%;
     margin:0 auto;
@@ -99,7 +99,7 @@ body{
     width: 100%;  
     border: 3px solid #fff;
 }
-.play_board section span{
+.play_board .section span{
     display: block;
     margin: 3px;
     height: 100px;

@@ -3,7 +3,7 @@ const selectBox = document.querySelector(".select_box"),
  selectXBtn = selectBox.querySelector(".playerX"),
  selectOBtn = selectBox.querySelector(".playerO"),
  playBoard = document.querySelector(".play_board"),
- allBox = document.querySelectorAll("section span"),
+ allBox = document.querySelectorAll(".section span"),
  players = document.querySelector(".players"),
  resultBox = document.querySelector(".result_box"),
  wonText = resultBox.querySelector(".won_text");
@@ -12,7 +12,7 @@ var voice = document.getElementById('audio');
 
 //Once Window Loaded
 window.onload = () =>{
-    for (let i = 0; i < allBox.length; i++) { 
+    for (let i = 0; i <allBox.length; i++) { 
         allBox[i].setAttribute("onclick","clickedBox(this)");
     }
 	selectOBtn.onclick = () =>{
@@ -29,24 +29,24 @@ function changeStyle(){
 	stateIcon.innerHTML=`<i class="fa-solid fa-moon"></i>`;
 
 	if(state){	
-		for (let index = 0; index < Box.length; index++) { 
+		for (let index = 0; index <Box.length; index++){ 
 			const element = Box[index];
-			element.style.color = "#000";
+			element.style.color = "#000" ;
 		}
-		for (let index = 0; index < chngBg.length; index++) {
+		for (let index = 0; index <chngBg.length; index++){
 			const element = chngBg[index];
-			element.style.backgroundColor="#000";
-			element.style.transition = "2s";
+			element.style.backgroundColor="#000" ;
+			element.style.transition = "2s" ;
 		}
 		state = false;
 	}else{
 		stateIcon.innerHTML=`<i class="fa-solid fa-sun"></i>`;
 
-		for (let index = 0; index < Box.length; index++) { 
+		for (let index = 0; index <Box.length; index++) { 
 			const element = Box[index];
 			element.style.color = "#8b008b";
 		}
-		for (let index = 0; index < chngBg.length; index++) { 
+		for (let index = 0; index <chngBg.length; index++) { 
 			const element = chngBg[index];
 			element.style.backgroundColor="#8b008b";
 			element.style.transition = "2s";
@@ -100,7 +100,7 @@ function bot(runBot){
 	if (runBot){ 
 	playerSign="O";
 	let array = [];
-	for (let i = 0; i < allBox.length; i++) {
+	for (let i = 0; i <allBox.length; i++) {
 		if (allBox[i].childElementCount ==0) {
 			array.push(i);
 		}
