@@ -86,7 +86,7 @@ I have used several technologies that have enabled this design to work:
 - [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
     - Used to style all the web content across the project. 
 - [JavaScript](https://www.javascript.com/)
-    - Used for the responsive navbar, scroll down arrow and image gallery.
+    - Used for game structure and logic.
 - [Google Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
     - Used as a primary method of fixing spacing issues, finding bugs, and testing responsiveness across the project.
 - [GitHub](https://github.com/)
